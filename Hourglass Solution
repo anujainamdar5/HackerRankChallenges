@@ -1,0 +1,22 @@
+public class Solution {
+
+    static int hourglassSum(int[][] arr) {
+            int maxSum=Integer.MIN_VALUE,tempSum=0;
+            for(int i=0;i<arr.length-2;i++)
+            {
+                tempSum=0;
+                for(int j=0;j<arr.length-2;j++)
+                  
+                  {      tempSum=
+                            arr[i][j]+arr[i][j+1]+arr[i][j+2] + // 3 elements in row 
+                                arr[i+1][j+1]+ // middle term
+                                    arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2]; // last 3 elements
+                        if (tempSum > maxSum)
+                            maxSum = tempSum;
+                  }
+                
+
+            }
+        return maxSum;
+    }
+}
